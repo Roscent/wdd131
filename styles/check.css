@@ -1,0 +1,30 @@
+section {
+    width: 90vw;
+    margin: 1rem auto;
+    background-color: #eee;
+    padding: 1rem;
+    border: 1px solid rgb(0 0 0 / .1);
+}
+
+
+p {
+    text-align: smaller;
+}
+
+.col1 img {
+    width: 200px;
+    float: right;
+    margin: 0 0 15px 15px;
+    border: 1px solid rgba(0 0 0 / .3);
+    box-shadow: 0 0 30px #777;
+}
+
+footer {
+    float: left;
+    border-top: 1px solid #555;
+    padding-top: 5px;
+    clear: both;
+    /* Remove the comment below and observe the results. */
+
+    /* clear: both; */
+}
