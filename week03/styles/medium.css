@@ -1,0 +1,19 @@
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.info-section,
+.weather-section {
+    margin-bottom: 0;
+}
+
+.weather-section h2::after {
+    content: " ⛅";
+}

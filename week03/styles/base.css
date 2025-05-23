@@ -1,0 +1,85 @@
+:root {
+    --primary-color: #002B7F;
+    /* Costa Rica flag blue */
+    --secondary-color: #CE1126;
+    /* Costa Rica flag red */
+    --accent-color: #FFFFFF;
+    /* Costa Rica flag white */
+    --text-color: #333333;
+    --light-text: #FFFFFF;
+    --background-color: #F5F5F5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--primary-color);
+    padding: 1rem;
+    background-color: var(--accent-color);
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-section,
+.weather-section {
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.weather-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.weather-icon svg {
+    width: 50px;
+    height: 50px;
+}
+
+.weather-data p {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 8px;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Costa Rica - A Tropical Paradise</title>
+    <meta name="description" content="Discover the beauty of Costa Rica, its biodiversity, and cultural richness">
+    <meta name="author" content="Roscent Nkemjika Ofuonye">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 600px)">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 900px)">
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Costa Rica</h1>
+        <picture>
+            <source media="(max-width: 599px)" srcset="images/costaa.webp">
+            <source media="(min-width: 600px)" srcset="images/rica.webp">
+            <img src="images/costaa.webp" alt="The science of biodiversity widelife in Costa Rica" width="1200" height="600">
+        </picture>
+    </header>
+
+    <main>
+        <section class="info-section">
+            <h2>Pura Vida</h2>
+            <p>Costa Rica, known for its incredible biodiversity and eco-tourism, offers stunning beaches, lush
+                rainforests, and active volcanoes. The phrase "Pura Vida" (pure life) captures the country's relaxed
+                lifestyle.</p>
+        </section>
+
+        <section class="weather-section">
+            <h2>Weather</h2>
+            <div class="weather-container">
+                <div class="weather-icon">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3V4M12 20V21M21 12H20M4 12H3M18.364 5.63604L17.6569 6.34315M6.34315 17.6569L5.63604 18.364M18.364 18.364L17.6569 17.6569M6.34315 6.34315L5.63604 5.63604"stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                        <path d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="#000000" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="weather-data">
+                    <p>Current Temperature: <span id="temp">78</span>°F</p>
+                    <p>Wind Speed: <span id="wind-speed">5</span> mph</p>
+                    <p>Wind Chill: <span id="wind-chill">N/A</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Roscent N. Ofuonye | Visit Costa Rica</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+
+</html>

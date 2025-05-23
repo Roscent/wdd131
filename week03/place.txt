@@ -1,0 +1,89 @@
+Implementation Notes
+Responsive Images:
+
+    Use WebP format for better compression
+
+    Create two hero images (small and large versions)
+
+    Use the <picture> element with <source> tags for responsive loading
+
+Weather Section:
+
+    SVG icon for mobile view
+
+    Emoji (⛅) for wider views (added via CSS pseudo-element)
+
+    Static temperature and wind speed values
+
+    Wind chill calculation with conditions
+
+Design Elements:
+
+    Color scheme based on Costa Rica's flag (blue, white, red)
+
+    Clean, responsive layout matching wireframes
+
+    Proper spacing and typography
+
+JavaScript:
+
+    Dynamic current year and last modified date
+
+    Wind chill calculation function
+
+    Conditional display based on temperature and wind speed
+
+Testing:
+
+    Validate HTML and CSS
+
+    Check console for JavaScript errors
+
+    Test responsive behavior
+
+    Run Lighthouse reports for accessibility and performance
+
+Remember to:
+
+    Optimize your images before uploading
+
+    Add proper alt text for accessibility
+
+    Test on multiple devices if possible
+
+    Verify all requirements are met before submission
+
+This implementation meets all the assignment requirements while providing a
+clean, responsive design focused on Costa Rica as the example destination.
+You can easily adapt it for any other location by changing the content,
+images, and color scheme.
+
+
+
+JavaScript 
+// Display current year and last modified date
+document.getElementById('current-year').textContent = new Date().getFullYear();
+document.getElementById('last-modified').textContent = document.lastModified;
+
+// Calculate and display wind chill
+function calculateWindChill(temp, windSpeed) {
+    // Formula for Fahrenheit: 35.74 + 0.6215T - 35.75(V^0.16) + 0.4275T(V^0.16)
+    return 35.74 + (0.6215 * temp) - (35.75 * Math.pow(windSpeed, 0.16)) + (0.4275 * temp * Math.pow(windSpeed, 0.16));
+}
+
+// Get DOM elements
+const tempElement = document.getElementById('temp');
+const windSpeedElement = document.getElementById('wind-speed');
+const windChillElement = document.getElementById('wind-chill');
+
+// Get values from the page
+const temp = parseFloat(tempElement.textContent);
+const windSpeed = parseFloat(windSpeedElement.textContent);
+
+// Calculate wind chill if conditions are met
+if (temp <= 50 && windSpeed > 3) {
+    const windChill = calculateWindChill(temp, windSpeed);
+    windChillElement.textContent = windChill.toFixed(1) + "°F";
+} else {
+    windChillElement.textContent = "N/A";
+}
