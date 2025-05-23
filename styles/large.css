@@ -9,3 +9,7 @@ header h1 {
 main {
     grid-template-columns: 2fr 1fr;
 }
+
+.infor-section {
+    position: absolute;
+}
