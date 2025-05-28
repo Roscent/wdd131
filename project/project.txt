@@ -1,0 +1,33 @@
+Website Project Proposal : e_gallery
+
+Project Topic description/reason:
+    Development of a dynamic, accessible website for an e_gallery, a digital
+    platform that showcases artwork, photographs, or other creative works 
+    online which serves as a virtual space where artists, photographers, and
+    collectors can display, promote, and sell their pieces to a global audience.
+
+Website Content Overview
+1. Home Page
+    - Engaging hero section with company overview
+    - Featured services highlights
+
+2. Gallery (showcase)
+    - Categories (paintings, digital art, photography, etc.)
+    - Search & Filter functionality
+
+3. E-commerce
+    - Product pages
+    - Shopping cart
+    - Checkout
+
+4. About/Information
+    - Brief company introduction with mission/vision
+
+5. Artist/Partner onboarding
+
+6. Contact
+
+7. User accounts
+    - Guest access
+    - Artist/partner accounts
+    - Customer accounts

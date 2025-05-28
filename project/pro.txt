@@ -1,0 +1,45 @@
+Website Project Proposal: CENTKEM ENTERPRISE
+
+Project Topic:
+Development of a dynamic, accessible website for CENTKEM ENTERPRISE,
+a business enterprise offering specialized services in its industry.
+
+Website Content Overview
+1. Home Page
+    Engaging hero section with company overview
+    Featured services highlights
+    Brief company introduction with mission/vision
+    Call-to-action sections for key user journeys
+
+2. Services Page
+    Detailed breakdown of all services offered
+    Service categories with descriptions
+    Visual representations of service offerings
+    Case studies or success metrics (if available)
+
+3. Contact Page
+    Contact form with validation
+    Company contact information (address, phone, email)
+    Interactive map (using Google Maps API)
+    Contact hours and preferred communication methods
+
+4. Collaboration Page
+    Partnership opportunities
+    Client testimonials
+    Collaboration process workflow
+    Form for partnership inquiries
+
+Technical Implementation;
+Dynamic Features:
+    JSON integration for service data management
+    Browser APIs for location services (map integration)
+    Responsive design with CSS Grid/Flexbox
+    Form validation with JavaScript
+    Performance optimization with lazy loading
+
+Accessibility Compliance:
+    WCAG 2.1 AA compliance
+    Semantic HTML5 structure
+    ARIA landmarks for screen readers
+    Proper color contrast ratios
+    Keyboard navigability
