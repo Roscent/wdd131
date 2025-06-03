@@ -3,8 +3,12 @@ Website Project Proposal : e_gallery
 Project Topic description/reason:
     Development of a dynamic, accessible website for an e_gallery, a digital
     platform that showcases artwork, photographs, or other creative works 
-    online which serves as a virtual space where artists, photographers, and
-    collectors can display, promote, and sell their pieces to a global audience.
+    online which serves as a virtual space.
+
+Reason 
+1. Showcase Artwork Digitally
+    - Allows artists to display their work to a global audience without physical limitations.
+    - Helps photographers, painters, sculptors, and digital artists promote their portfolios professionally
 
 Website Content Overview
 1. Home Page
