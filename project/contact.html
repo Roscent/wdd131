@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CENTKEM ENTERPRISE CONTACT">
+    <meta name="author" content="ROSCENT NKEMJIKA OFUONYE">
+    <link rel="icon" href="favicon.ico">
+    <meta property="og:title" content="CENTKEM ENTERPRISE CONTACT PAGE">
+    <meta property="og:image" content="https://Roscent.github.io/project/images/contact.jpg">
+    <meta property="og:url" content="https://Roscent.github.io/project/contact.html">
+    <meta property="og:type" content="website">
+    <title>CENTKEM ENTERPRISE CONTACT</title>
+    <link rel="stylesheet" href="styles/mine.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/mobile-menu.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/contact.png" alt="Contact us" loading="lazy" width="250" height="250">
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="collaboration.html">Collaborations</a>
+    </nav>
+    <main>
+        <div class="company-information">
+            <h1>CONTACT US</h1>
+            <p><strong>Address:</strong> 16 Ahamefuna street, behind NITEL Office Asaba, Delta State</p>
+            <p><strong>Phone:</strong> +234-816-808-2534</p>
+            <p><strong>Email: </strong><a href="mailto:ofuonyeroscentn@gmail.com">ofuonyeroscentn@gmail.com</a></p>
+        </div>
+
+        <div class="contact">
+            <div>CENTKEM ENTERPRISE</div>
+        </div>
+
+        <div>
+            <<form method="post" action="submit_contact.php">>
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <div class="form-item column2">
+                        <label for="fullname">Full Name*:</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="column2">
+                        <label for="useremail">Email*:</label>
+                        <input type="email" id="useremail" name="useremail" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>What is the purpose of the message?</legend>
+                    <div>
+                        <input type="radio" id="general" name="purpose" value="General Inquiry" required>
+                        <label for="general">General Inquiry</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="reservation" name="purpose" value="Reservation Question">
+                        <label for="reservation">Reservation/Order Question</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="website" name="purpose" value="Website Suggestion">
+                        <label for="website">Collaboration</label>
+                    </div>
+                </fieldset>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="3" required></textarea>
+
+                <div>
+                    <input type="checkbox" id="subscribe" name="subscribe">
+                    <label for="subscribe">Please subscribe me to the monthly newsletter</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+                </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> CENTKEM ENTERPRISE </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
