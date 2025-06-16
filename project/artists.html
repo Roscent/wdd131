@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Registration | ArtVision</title>
+    <meta name="description" content="Join ArtVision as an artist to showcase and sell your artwork">
+    <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/artists.css">
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/artists.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">ArtVision</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="artists.html" class="active">For Artists</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+                <a href="login.html" id="login-btn">Login</a>
+            </nav>
+            <button class="menu-toggle">☰ Menu</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="artist-hero">
+            <h1>Showcase Your Art with Us</h1>
+            <p>Join our community of talented artists and reach art lovers worldwide</p>
+        </section>
+
+        <section class="artist-benefits">
+            <h2>Why Join ArtVision?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Global Exposure</h3>
+                    <p>Your artwork seen by collectors worldwide</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Easy Sales</h3>
+                    <p>We handle transactions and shipping</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Fair Commission</h3>
+                    <p>Keep 70% of each sale</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Artist Support</h3>
+                    <p>Dedicated team to help you succeed</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="artist-form">
+            <h2>Artist Application</h2>
+            <form id="artistApplication" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name*</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name*</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone*</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="portfolio">Portfolio Link*</label>
+                    <input type="url" id="portfolio" name="portfolio" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="artType">Primary Art Medium*</label>
+                    <select id="artType" name="artType" required>
+                        <option value="">Select your primary medium</option>
+                        <option value="painting">Painting</option>
+                        <option value="digital">Digital Art</option>
+                        <option value="photography">Photography</option>
+                        <option value="sculpture">Sculpture</option>
+                        <option value="mixed">Mixed Media</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Artist Bio*</label>
+                    <textarea id="bio" name="bio" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="artworkSamples">Upload Artwork Samples (Max 3)*</label>
+                    <input type="file" id="artworkSamples" name="artworkSamples" multiple accept="image/*" required>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                    <label for="agreeTerms">I agree to the <a href="#" data-modal="termsModal">Terms &
+                            Conditions</a>*</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </section>
+
+        <!-- Terms Modal -->
+        <div id="termsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Terms & Conditions</h2>
+                <div class="terms-content">
+                    <h3>Artist Agreement</h3>
+                    <p>By joining ArtVision, you agree to the following terms:</p>
+                    <ul>
+                        <li>You retain all copyright to your artwork</li>
+                        <li>ArtVision receives 30% commission on each sale</li>
+                        <li>You warrant that all submitted artwork is your original work</li>
+                        <li>ArtVision handles customer transactions and shipping</li>
+                        <li>Payments to artists are made monthly</li>
+                    </ul>
+                    <h3>Shipping Requirements</h3>
+                    <p>All physical artwork must be properly packaged for safe shipping.</p>
+                    <h3>Content Guidelines</h3>
+                    <p>Artwork must not contain offensive or illegal content.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ArtVision</h3>
+                <p>Connecting artists with art lovers worldwide</p>
+            </div>
+            <div class="footer-section">
+                <h3>Artist Resources</h3>
+                <ul>
+                    <li><a href="#">Selling Tips</a></li>
+                    <li><a href="#">Packaging Guide</a></li>
+                    <li><a href="#">Pricing Advice</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: artists@artvision.com</p>
+                <p>Phone: +1 (555) 987-6543</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="currentyear"></span> ArtVision Gallery. All rights reserved.</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+
+</html>

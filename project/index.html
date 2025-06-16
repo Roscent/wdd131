@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtVision E-Gallery</title>
+    <meta name="description" content="Discover and purchase beautiful artworks from talented artists">
+    <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">ArtVision</div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="artists.html">For Artists</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+                <a href="login.html" id="login-btn">Login</a>
+            </nav>
+            <button class="menu-toggle">☰ Menu</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Discover Beautiful Artworks</h1>
+            <p>Explore our collection of handpicked paintings, digital art, and sculptures from talented artists
+                worldwide</p>
+            <div class="cta-buttons">
+                <a href="gallery.html" class="btn btn-primary">Browse Art</a>
+                <a href="artists.html" class="btn btn-secondary">Showcase Your Work</a>
+            </div>
+        </section>
+
+        <section class="featured-artists">
+            <h2>Featured Artists</h2>
+            <div class="artist-grid">
+                <!-- Dynamically loaded from main.js -->
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Browse Art</h3>
+                    <p>Explore our diverse collection of artworks</p>
+                </div>
+                <div class="step">
+                    <h3>2. Purchase</h3>
+                    <p>Add to cart and complete your purchase</p>
+                </div>
+                <div class="step">
+                    <h3>3. Delivery</h3>
+                    <p>Get your artwork delivered safely to your home</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ArtVision</h3>
+                <p>Connecting artists with art lovers worldwide</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="artists.html">For Artists</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@artvision.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="currentyear"></span> ArtVision Gallery. All rights reserved.</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+
+</html>

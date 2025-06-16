@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | ArtVision</title>
+    <meta name="description" content="Thank you for your order">
+    <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/thankyou.css">
+    <script src="scripts/date.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">ArtVision</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="artists.html">For Artists</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+                <a href="login.html" id="login-btn">Login</a>
+            </nav>
+            <button class="menu-toggle">☰ Menu</button>
+        </div>
+    </header>
+
+    <main class="thank-you-container">
+        <div class="thank-you-card">
+            <div class="checkmark">✓</div>
+            <h1>Thank You for Your Order!</h1>
+            <p>Your order has been received and is being processed. You'll receive a confirmation email shortly.</p>
+
+            <div class="order-details">
+                <h2>Order #<span id="order-number">12345</span></h2>
+                <p>Estimated delivery: <span id="delivery-date">June 25, 2023</span></p>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="order-items">
+                    <!-- Order items will be populated from localStorage -->
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="order-total">$0.00</span>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="gallery.html" class="btn btn-primary">Continue Shopping</a>
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+            </div>
+
+            <div class="customer-support">
+                <p>Need help? <a href="contact.html">Contact our support team</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ArtVision</h3>
+                <p>Connecting artists with art lovers worldwide</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="artists.html">For Artists</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@artvision.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="currentyear"></span> ArtVision Gallery. All rights reserved.</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+    <script>
+        // Display order details from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const lastOrder = JSON.parse(localStorage.getItem('lastOrder')) || [];
+            const orderItemsContainer = document.getElementById('order-items');
+            const orderTotalElement = document.getElementById('order-total');
+
+            if (lastOrder.length > 0) {
+                let total = 0;
+                orderItemsContainer.innerHTML = lastOrder.map(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    return `
+                        <div class="order-item">
+                            <span>${item.title} (x${item.quantity})</span>
+                            <span>$${itemTotal.toFixed(2)}</span>
+                        </div>
+                    `;
+                }).join('');
+
+                // Add tax (10%) and shipping ($15)
+                const tax = total * 0.1;
+                const shipping = 15.00;
+                total = total + tax + shipping;
+
+                orderTotalElement.textContent = `$${total.toFixed(2)}`;
+
+                // Generate a random order number
+                document.getElementById('order-number').textContent = Math.floor(10000 + Math.random() * 90000);
+
+                // Set delivery date (3-5 business days from now)
+                const deliveryDate = new Date();
+                deliveryDate.setDate(deliveryDate.getDate() + 3 + Math.floor(Math.random() * 3));
+                document.getElementById('delivery-date').textContent = deliveryDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+
+            // Update cart count (should be 0 after checkout)
+            const cartCount = document.getElementById('cart-count');
+            if (cartCount) {
+                cartCount.textContent = '0';
+            }
+        });
+    </script>
+</body>
+
+</html>

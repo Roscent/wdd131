@@ -1,285 +1,103 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CENTKEM ENTERPRISE SERVICE">
-    <meta name="author" content="ROSCENT NKEMJIKA OFUONYE">
-    <link rel="icon" href="favicon.ico">
-    <meta property="og:title" content="CENTKEM ENTERPRISE SERVICE PAGE">
-    <meta property="og:image" content="https://Roscent.github.io/project/images/service.png">
-    <meta property="og:url" content="https://Roscent.github.io/project/service.html">
-    <meta property="og:type" content="website">
-    <title>CENTKEM ENTERPRISE SERVICE</title>
-    <link rel="stylesheet" href="styles/gallerybase.css">
+    <title>Art Gallery | ArtVision</title>
+    <meta name="description" content="Browse our collection of beautiful artworks">
+    <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/gallery.css">
-    <script src="scripts/modal.js" defer></script>
+    <script src="scripts/main.js" defer></script>
     <script src="scripts/date.js" defer></script>
 </head>
 
 <body>
     <header>
-        <img src="images/service.png" alt="Our Services" loading="lazy" width="250" height="250">
+        <div class="header-content">
+            <div class="logo">ArtVision</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="artists.html">For Artists</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+                <a href="login.html" id="login-btn">Login</a>
+            </nav>
+            <button class="menu-toggle">☰ Menu</button>
+        </div>
     </header>
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="gallery.html" class="active">Gallery</a>
-        <a href="contact.html">Contact</a>
-        <a href="collaboration.html">Collaborations</a>
-    </nav>
+
     <main>
-        <h1>THE SERVICES WE RENDER</h1>
-
-        <div class="services-container">
-            <div class="services-cards">
-                <div class="card">
-                    <h3>🔨 Furniture Manufacturing & Production</h3>
-                    <p>Custom and mass production of high-quality furniture pieces.</p>
-                    <p class="learn-more" onclick="openModal('mpModal')">Learn More</p>
+        <section class="gallery-header">
+            <h1>Art Gallery</h1>
+            <div class="gallery-controls">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search artworks...">
+                    <button id="search-btn">Search</button>
                 </div>
-
-                <div class="card">
-                    <h3>Agriculture Primary Production Services</h3>
-                    <p>Crop Farming, Livestock Farming, Agroforestry, Organic Farming.</p>
-                    <p class="learn-more" onclick="openModal('ppModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>🛋️ Furniture Sales & Retail</h3>
-                    <p>In-store and online sales of our premium furniture collections.</p>
-                    <p class="learn-more" onclick="openModal('srModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>Agricultural Input Supply & Support Services</h3>
-                    <p>Seed & Seedling Supply, Fertilizers & Soil Amendments, Pesticides & Herbicides, Farm Machinery &
-                        Equipment Rental, Animal Feed & Nutrition</p>
-                    <p class="learn-more" onclick="openModal('ssModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>🧑‍🎨 Furniture Design Services</h3>
-                    <p>Professional interior design and space planning solutions.</p>
-                    <p class="learn-more" onclick="openModal('dsModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>Agricultural Consulting & Advisory Services</h3>
-                    <p>Soil Testing & Land Management, Crop & Livestock Advisory, Precision Farming Solutions,
-                        Climate-Smart Agriculture.</p>
-                    <p class="learn-more" onclick="openModal('accModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>🚚 Furniture Logistics & Delivery</h3>
-                    <p>Reliable delivery services for your furniture purchases.</p>
-                    <p class="learn-more" onclick="openModal('ldModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>Agricultural Processing & Value Addition</h3>
-                    <p>Food Processing, Dairy Processing, Meat & Poultry Processing, Biofuel Production.</p>
-                    <p class="learn-more" onclick="openModal('fpModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>🛠️ Furniture Installation & Assembly</h3>
-                    <p>Expert assembly and installation of your furniture.</p>
-                    <p class="learn-more" onclick="openModal('iaModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>Agricultural Marketing & Distribution Services</h3>
-                    <p>Wholesale & Retail Farm Produce Sales, E-commerce for Agri-products, Export Services, Farmers'
-                        Market & Cooperatives.</p>
-                    <p class="learn-more" onclick="openModal('mdModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>🧽 Furniture Maintenance & Repair</h3>
-                    <p>Professional care and restoration for your furniture.</p>
-                    <p class="learn-more" onclick="openModal('mrModal')">Learn More</p>
-                </div>
-
-                <div class="card">
-                    <h3>Agriculture Logistics & Storage Services</h3>
-                    <p>Cold Storage & Warehousing, Transportation & Supply Chain Management, Grain Silos & Storage
-                        Facilities.</p>
-                    <p class="learn-more" onclick="openModal('lsModal')">Learn More</p>
+                <div class="filter-controls">
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="painting">Paintings</option>
+                        <option value="digital">Digital Art</option>
+                        <option value="photography">Photography</option>
+                        <option value="sculpture">Sculpture</option>
+                    </select>
+                    <select id="price-filter">
+                        <option value="">Any Price</option>
+                        <option value="0-100">Under $100</option>
+                        <option value="100-500">$100 - $500</option>
+                        <option value="500-1000">$500 - $1000</option>
+                        <option value="1000+">Over $1000</option>
+                    </select>
+                    <select id="sort-by">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Modals -->
-        <div id="mpModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('mpModal')">&times;</span>
-                <h2>🔨 Furniture Manufacturing & Production</h2>
-                <ul>
-                    <li>Custom furniture design & production</li>
-                    <li>Mass production of furniture pieces</li>
-                    <li>Prototyping and sample creation</li>
-                    <li>CNC routing and laser cutting</li>
-                    <li>Upholstery and reupholstery services</li>
-                    <li>Furniture finishing (painting, staining, etc.)</li>
-                    <li>Cabinet making and millwork</li>
-                </ul>
-            </div>
-        </div>
+        <section id="featured-art" class="art-grid">
+            <!-- Art items will be dynamically inserted here from main.js -->
+        </section>
 
-        <div id="ppModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('ppModal')">&times;</span>
-                <h2>Agriculture Primary Production Services</h2>
-                <ul>
-                    <li>Growing grains, vegetables, fruits, oilseeds, etc</li>
-                    <li>Dairy, poultry, piggery, sheep/goat rearing, aquaculture, etc.</li>
-                    <li>Timber, fruit trees, and sustainable wood production.</li>
-                    <li>Chemical-free crop and livestock productio</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="srModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('srModal')">&times;</span>
-                <h2>🛋️ Furniture Sales & Retail</h2>
-                <ul>
-                    <li>In-store retail sales</li>
-                    <li>Online furniture sales (eCommerce)</li>
-                    <li>Virtual showroom tours</li>
-                    <li>Product catalog management</li>
-                    <li>Home staging furniture sales</li>
-                    <li>Outlet/clearance centers</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="ssModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('ssModal')">&times;</span>
-                <h2>Agricultural Input Supply & Support Services</h2>
-                <ul>
-                    <li>High-quality, hybrid, or genetically modified seeds.</li>
-                    <li>Organic (manure, compost) and inorganic fertilizers.</li>
-                    <li>Crop protection chemicals.</li>
-                    <li>Tractors, harvesters, irrigation systems.</li>
-                    <li>Supplying balanced feed for livestock.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="dsModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('dsModal')">&times;</span>
-                <h2>🧑‍🎨 Furniture Design Services</h2>
-                <ul>
-                    <li>Interior design consultation</li>
-                    <li>Space planning & layout services</li>
-                    <li>3D modeling and visualization</li>
-                    <li>Color matching and material selection</li>
-                    <li>Ergonomic furniture planning</li>
-                    <li>Style consultations (modern, rustic, etc.)</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="accModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('accModal')">&times;</span>
-                <h2>Agricultural Consulting & Advisory Services</h2>
-                <ul>
-                    <li>Analyzing soil health and recommending improvements.</li>
-                    <li>Best practices for higher yields.</li>
-                    <li>Using drones, IoT, and AI for smart farming.</li>
-                    <li>Techniques for drought/flood resilience.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="ldModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('ldModal')">&times;</span>
-                <h2>🚚 Furniture Logistics & Delivery</h2>
-                <ul>
-                    <li>Home delivery and setup</li>
-                    <li>International shipping</li>
-                    <li>Warehousing and inventory management</li>
-                    <li>Same-day or scheduled delivery</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="fpModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('fpModal')">&times;</span>
-                <h2>Agricultural Processing & Value Addition</h2>
-                <ul>
-                    <li>Milling, canning, freezing, drying, and packaging.</li>
-                    <li>Cheese, yogurt, butter, and milk pasteurization.</li>
-                    <li>Slaughterhouses, packaging, and cold storage.</li>
-                    <li>Ethanol, biodiesel from crops like sugarcane, corn, or jatropha.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="iaModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('iaModal')">&times;</span>
-                <h2>🛠️ Furniture Installation & Assembly</h2>
-                <ul>
-                    <li>Furniture assembly</li>
-                    <li>Built-in furniture installation</li>
-                    <li>Office/Workstation setup</li>
-                    <li>Wall mounting (shelves, TVs, etc.)</li>
-                    <li>Disassembly and relocation support</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="mdModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('mdModal')">&times;</span>
-                <h2> Agricultural Marketing & Distribution Services</h2>
-                <ul>
-                    <li>Direct to markets, supermarkets, or exporters.</li>
-                    <li>Online platforms for selling produce.</li>
-                    <li>Compliance with international standards for global markets.</li>
-                    <li>Collective marketing to increase profits.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="mrModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('mrModal')">&times;</span>
-                <h2>🧽 Furniture Maintenance & Repair</h2>
-                <ul>
-                    <li>Furniture repair (wood, metal, fabric, etc.)</li>
-                    <li>Refinishing and restoration</li>
-                    <li>Reupholstery and cushion replacement</li>
-                    <li>Warranty and after-sales service</li>
-                    <li>Protective treatments (waterproofing, etc.)</li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="lsModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('lsModal')">&times;</span>
-                <h2> Agriculture Logistics & Storage Services</h2>
-                <ul>
-                    <li>Preserving perishable goods.</li>
-                    <li>Moving produce from farms to markets.</li>
-                    <li>Preventing post-harvest losses.</li>
-                </ul>
-            </div>
+        <div class="pagination">
+            <button id="prev-page" disabled>Previous</button>
+            <span id="page-indicator">Page 1 of 3</span>
+            <button id="next-page">Next</button>
         </div>
     </main>
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> CENTKEM ENTERPRISE </p>
-        <p id="lastModified"></p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ArtVision</h3>
+                <p>Connecting artists with art lovers worldwide</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="artists.html">For Artists</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@artvision.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="currentyear"></span> ArtVision Gallery. All rights reserved.</p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
 </body>
 
