@@ -1,4 +1,3 @@
-// Artist Application System
 class ArtistApplication {
     constructor() {
         this.applications = JSON.parse(localStorage.getItem('artistApplications')) || [];
@@ -18,7 +17,6 @@ class ArtistApplication {
             });
         }
 
-        // Terms modal trigger
         document.querySelectorAll('[data-modal="termsModal"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -31,13 +29,11 @@ class ArtistApplication {
         const form = document.getElementById('artistApplication');
         const formData = new FormData(form);
 
-        // Basic validation
         if (!formData.get('agreeTerms')) {
             alert('You must agree to the terms and conditions');
             return;
         }
 
-        // Create application object
         const application = {
             id: Date.now().toString(),
             firstName: formData.get('firstName'),
@@ -63,7 +59,7 @@ class ArtistApplication {
                             name: file.name,
                             type: file.type,
                             size: file.size,
-                            data: e.target.result // Base64 encoded
+                            data: e.target.result
                         });
                     };
                     reader.readAsDataURL(file);
@@ -71,15 +67,12 @@ class ArtistApplication {
             });
         }
 
-        // Save application
         this.applications.push(application);
         localStorage.setItem('artistApplications', JSON.stringify(this.applications));
 
-        // Show success message
         alert('Application submitted successfully! We will review your application and get back to you soon.');
         form.reset();
 
-        // Redirect to thank you page
         setTimeout(() => {
             window.location.href = 'thankyou.html';
         }, 1000);
@@ -90,7 +83,6 @@ class ArtistApplication {
         if (modal) {
             modal.style.display = 'block';
 
-            // Close modal when clicking X or outside
             modal.querySelector('.close-modal').addEventListener('click', () => {
                 modal.style.display = 'none';
             });
@@ -104,7 +96,6 @@ class ArtistApplication {
     }
 }
 
-// Initialize artist application system
 document.addEventListener('DOMContentLoaded', () => {
     new ArtistApplication();
 });

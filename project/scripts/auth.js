@@ -1,4 +1,3 @@
-// Authentication System
 class AuthSystem {
     constructor() {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
@@ -12,7 +11,6 @@ class AuthSystem {
     }
 
     setupEventListeners() {
-        // Login Form
         const loginForm = document.getElementById('loginForm');
         if (loginForm) {
             loginForm.addEventListener('submit', (e) => {
@@ -23,7 +21,6 @@ class AuthSystem {
             });
         }
 
-        // Logout functionality
         const logoutButtons = document.querySelectorAll('.logout-btn');
         logoutButtons.forEach(button => {
             button.addEventListener('click', () => this.logout());
@@ -31,19 +28,17 @@ class AuthSystem {
     }
 
     register(userData) {
-        // Check if user already exists
         const userExists = this.users.some(user => user.email === userData.email);
         if (userExists) {
             this.showNotification('User with this email already exists', 'error');
             return false;
         }
 
-        // Add new user
         const newUser = {
             id: Date.now().toString(),
             ...userData,
             createdAt: new Date().toISOString(),
-            role: 'user' // Default role
+            role: 'user'
         };
 
         this.users.push(newUser);
@@ -64,7 +59,6 @@ class AuthSystem {
             this.showNotification('Login successful!', 'success');
             this.updateAuthUI();
 
-            // Redirect after login
             setTimeout(() => {
                 window.location.href = 'index.html';
             }, 1000);
@@ -81,7 +75,6 @@ class AuthSystem {
         this.showNotification('Logged out successfully', 'success');
         this.updateAuthUI();
 
-        // Redirect to home after logout
         setTimeout(() => {
             window.location.href = 'index.html';
         }, 1000);
@@ -124,11 +117,8 @@ class AuthSystem {
     }
 }
 
-// Initialize auth system when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     const auth = new AuthSystem();
-
-    // Register form handling
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
@@ -139,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 password: document.getElementById('register-password').value
             };
             if (auth.register(formData)) {
-                // Redirect after successful registration
                 setTimeout(() => {
                     window.location.href = 'index.html';
                 }, 1500);

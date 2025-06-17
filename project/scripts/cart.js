@@ -38,7 +38,6 @@ class ShoppingCart {
     }
 
     setupEventListeners() {
-        // Quantity increase
         document.querySelectorAll('.increase').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const itemId = parseInt(e.target.closest('.cart-item').dataset.id);
@@ -46,7 +45,6 @@ class ShoppingCart {
             });
         });
 
-        // Quantity decrease
         document.querySelectorAll('.decrease').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const itemId = parseInt(e.target.closest('.cart-item').dataset.id);
@@ -57,7 +55,6 @@ class ShoppingCart {
             });
         });
 
-        // Remove item
         document.querySelectorAll('.btn-remove').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const itemId = parseInt(e.target.closest('.cart-item').dataset.id);
@@ -65,7 +62,6 @@ class ShoppingCart {
             });
         });
 
-        // Checkout button
         const checkoutBtn = document.getElementById('checkout-btn');
         if (checkoutBtn) {
             checkoutBtn.addEventListener('click', () => this.checkout());
@@ -97,12 +93,12 @@ class ShoppingCart {
 
         if (subtotalElement && taxElement && totalElement) {
             const subtotal = this.calculateSubtotal();
-            const tax = subtotal * 0.1; // 10% tax
+            const tax = subtotal * 0.1;
             const total = subtotal + tax;
 
-            subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-            taxElement.textContent = `$${tax.toFixed(2)}`;
-            totalElement.textContent = `$${total.toFixed(2)}`;
+            subtotalElement.textContent = `#${subtotal.toFixed(2)}`;
+            taxElement.textContent = `#${tax.toFixed(2)}`;
+            totalElement.textContent = `#${total.toFixed(2)}`;
         }
     }
 
@@ -125,8 +121,6 @@ class ShoppingCart {
     }
 
     checkout() {
-        // In a real app, this would integrate with a payment processor
-        // For now, we'll just simulate a successful checkout
         localStorage.setItem('lastOrder', JSON.stringify(this.items));
         this.items = [];
         this.saveToStorage();
@@ -135,7 +129,6 @@ class ShoppingCart {
     }
 }
 
-// Initialize cart when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('cart-items')) {
         new ShoppingCart();

@@ -1,4 +1,3 @@
-/* Authentication Pages Styles */
 .auth-container {
     display: flex;
     min-height: calc(100vh - 200px);
@@ -83,8 +82,7 @@
     color: #777;
 }
 
-.auth-divider::before,
-.auth-divider::after {
+.auth-divider::before, .auth-divider::after {
     content: "";
     flex: 1;
     border-bottom: 1px solid #ddd;
@@ -120,3 +118,4 @@
 .btn-social.facebook {
     background: #3b5998;
     color
+}
